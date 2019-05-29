@@ -1,0 +1,27 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Margarine" rel="stylesheet">
+    <title>Welome to HomePage </title>
+  </head>
+
+  {%block styles%}
+    {%bootstrap_css%}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  {% endblock %}
+  <body>
+
+    {% block content %}
+      {% include "navbar.html" %}
+    {% endblock %}
+
+    
+    {% block scripts %}
+      {% bootstrap_javascript %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% endblock %}
+  </body>
+</html>
