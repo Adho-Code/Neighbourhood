@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{{ block.super}}
+<div class="container-fluid">
+  <div class="login">
+    <h5>HOODMATE LOGIN</h5>
+    <form class="" method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" name="button">Login</button>
+    </form>
+
+  </div>
+</div>
+{% endblock %}
