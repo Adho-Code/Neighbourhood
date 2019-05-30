@@ -1,0 +1,41 @@
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Margarine" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Account Register</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-4">
+        <div class="one">
+            <h1>NEIGHBOURHOOD</h1>
+            <p>Get to Your Home Partner Every where you go</p>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="list">
+          <h5>NEIGHBOURHOOD REGISTRATION</h5>
+          <p>signup and intract with your neighbor</p>
+          <form class="" method="post">
+            {% csrf_token %}
+            <button type="submit" name="button">Sign Up</button>
+            <h6>Already have an account? <a href="/accounts/login">LOGIN</a> </h6>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
