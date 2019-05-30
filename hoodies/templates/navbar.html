@@ -18,7 +18,7 @@
 
         <form id="dm" class="form-inline" role="search" action="{% url 'search_results' %}">
 
-          <input class="form-control mr-sm-2 nav-item" style='padding-right:30px;width:120%' type="text" placeholder="Search Business.." aria-label="Search" name="business">
+          <input class="form-control mr-sm-2 nav-item" style='padding-right:30px;width:120%' type="text" placeholder="Search Activities.." aria-label="Search" name="activities">
 
         </form>
         <br>
@@ -29,7 +29,7 @@
             <a href="{% url 'logout' %}">
               <h6>LOGOUT</h6>
             </a>
-            <a href="/business"><button> Submit Your Activities </button></a>
+            <a href="/activity"><button> Submit Your Activities </button></a>
 
             {% else %}
             <a href="{% url 'login' %}">
