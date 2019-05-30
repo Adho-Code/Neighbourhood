@@ -45,12 +45,15 @@ or just use this
 `$ python3.6 manage.py runserver`
 
 ## BDD
-Behavior	Result
-user loads the page	requested to login or signup
-user signup to the app	user is redirect to login page and later the location page
-user selects a hood	user is redirected to their hood and details about the hood are loaded
-user Registers a hood	user is redirected to their hood and details about the hood are loaded
-user makes a post	page loads the new made post
+| Behaviour                                                           | Results                                                                            |
+|---------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| User loads the page                                                 | Request the user to login or signup                                                |
+| User signup to the app                                              | User is redirect to login page and later the location page                         |
+| User selects a hood                                                 | User is redirected to their hood and details about the hood are loaded             |
+| User Registers a hood                                               | User is redirected to their hood and details about the hood are loaded             |
+| User makes a post                                                   | Page loads the new made post                                                       |
+| User can update the neighbour when he/she lives there original hood | The neighbours can get the information from one another.                           |
+| The Hood can post there activities for informing one another.       | The neighbours can get information by checking on the posts that are being posted. |
 
 
 ## Contact Information
