@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4%}
+<div class="container-fluid">
+  <div class="all">
+    <center>
+      <h3>Welcome <strong>{{user}}</strong></h3>
+      {% if user.is_authenticated %}
+      <h6>Sign in to your hood</h6>
+
+      {% for x in hood %}
+
+      <div class="hood">
+        <a href="{% url 'home' x.id %}">
+          <li>{{x.hood_name}}</li>
+        </a>
+      </div>
+
+      {% endfor %}
+      <br>
+      <h6>Not Yet registered to a Hood? signup here</h6>
+      <div class="hd">
+        <a href="{% url 'hood'%}">Register Hood</a>
+      </div>
+      {% else %}
+
+      <div class="see">
+        <p>Please <a href="/register">SIGNUP </a> to enjoy HOODMATE</p>
+        <br>
+        <p>Already have an account <a href="/account/login">LOGIN</a> here</p>
+      </div>
+
+      {% endif %}
+    </center>
+  </div>
+</div>
+{% endblock %}
