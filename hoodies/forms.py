@@ -19,4 +19,4 @@ class UploadForm(forms.ModelForm):
 class ActiForm(forms.ModelForm):
     class Meta:
         model = Activity
-        fields =('activity_name','user','neighborhood_id','business_email')
+        fields =('activity_name','user','neighborhood_id','activity_email')

@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <div class="three">
 
-    <h4>welcome you to hoodies <strong>{{user}}</strong></h4>
+    <h4>welcome you all to hoodies <strong>{{user}}</strong></h4>
   </div>
   <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/post">Make Post</a></button>
   <div class="pot">
@@ -32,9 +32,9 @@
         {% endfor %}
       </div>
       <div class="col-md-5">
-        <h3>Business around you</h3>
+        <h3>Activity around you</h3>
         {% for y in biz %}
-        <li>{{y.business_name}}</li>
+        <li>{{y.activity_name}}</li>
         {% endfor %}
       </div>
     </div>
