@@ -1,4 +1,4 @@
-<!-- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {{ block.super}}
 <div class="container-fluid">
@@ -10,21 +10,5 @@
     </form>
 
   </div>
-</div>
-{% endblock %} -->
-
-
-{% extends 'base.html' %}
-{% load bootstrap4 %}
-
-{% block content %}
-{{ block.super}}
-<h2>Sign up</h2>
-<div class="cd">
-  <form class="" method="post">
-    {% csrf_token %}
-    {% bootstrap_form form%}
-    <button type="submit" name="button">Login</button>
-  </form>
 </div>
 {% endblock %}
