@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +14,7 @@
   <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light" style='margin-bottom:50px;'>
     <div class='container'>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <h3 >HOOD</h3>
+        <h3 >HOODIES</h3>
 
         <form id="dm" class="form-inline" role="search" action="{% url 'search_results' %}">
 
@@ -30,7 +29,7 @@
             <a href="{% url 'logout' %}">
               <h6>LOGOUT</h6>
             </a>
-            <a href="/business"><button> Submit Your Business </button></a>
+            <a href="/business"><button> Submit Your Activities </button></a>
 
             {% else %}
             <a href="{% url 'login' %}">
