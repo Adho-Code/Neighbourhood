@@ -1,0 +1,127 @@
+/* center{
+    padding-top: 5%;
+  }
+  .hood{
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 1s;
+    width:300px;
+  }
+  .hd{
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 1s;
+    width:300px;
+  }
+  .hood li{
+    text-align: center;
+  }
+  .all{
+    background-image: url('https://i-h2.pinimg.com/564x/05/a9/88/05a9887f3e86f46ab637b89461cfcd5f.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100vh;
+  
+  }
+  center{
+    margin-left: 37%;
+  }
+  .one{
+    padding-top: 50%;
+    font-family: 'Margarine', cursive;
+  }
+  .list{
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 1s;
+    width:500px;
+    height: 550px;
+  }
+  .list h5{
+    text-align: center;
+    font-family: 'Margarine', cursive;
+    color: #745B28
+  }
+  .list p{
+    text-align: center;
+    font-family: 'Margarine', cursive;
+  }
+  .one h1{
+  color: #745B28
+  }
+  .login{
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 1s;
+    width: 50%;
+    margin-top: 10%;
+    margin-left: 25%;
+  }
+  .login h5{
+    text-align: center;
+    font-family: 'Margarine', cursive;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .style{
+    display: flex;
+    justify-content:space-between;
+    margin: 30px;
+    margin-right: 50px;
+  }
+  .style h6 {
+    margin-right: 30px;
+  }
+  #ls {
+    margin-left: 20px;
+  }
+  #dm{
+    position: relative;
+    right:  20px;
+  }
+  img{
+    height: 100vh;
+    width: auto;
+  }
+  .three{
+    margin-left: 8.5%;
+  }
+  .see{
+    padding: 10px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    transition: transform 1s;
+    width: 50%;
+    margin-top: 10%;
+  
+  }
+  .block{
+    padding: 5px;
+    padding-top: 0;
+    border: 1px solid black;
+    box-shadow: -1px 1px 16px -1px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 1s;
+    width: 50%;
+    margin-left: 25%;
+  } */
