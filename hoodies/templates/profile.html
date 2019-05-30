@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4%}
+
+<br>
+<br>
+<br>
+<div class="container">
+  <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/new">Edit Profile</a></button>
+  <i id="fa_h" style="font-size:24px" class="fa fa-cog" aria-hidden="true"></i>
+  <div id="block">
+    <div class="block">
+      {% for prof in all_profile%}
+      <h4 id="p_hhh">Username: <strong>{{prof.user}}</strong></h4>
+      <h4 id="p_hhh">email_address: <strong>{{prof.email_address}}</strong></h4>
+      <h4 id="p_hhh">neighborhood: <strong>{{prof.neighborhood_id}}</strong></h4>
+      {% endfor %}
+    </div>
+    <br>
+  </div>
+</div>
+<br>
+<br>
+<div class="">
+  {%for de in images%}
+  <img src="{{de.image_path.url}}" alt="">
+  {%endfor%}
+</div>
+{%endblock%}
