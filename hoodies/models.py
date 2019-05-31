@@ -34,29 +34,6 @@ class Business(models.Model):
         return self.business_name
 
 
-    @classmethod
-    def search_by_business_name(cls,search_term):
-        project = Business.objects.filter(business_name__icontains = search_term)
-        return project
-
-
-class Activities(models.Model):
-    activities_name = models.CharField(max_length=30, blank=True)
-    user = models.ForeignKey(User,blank=True, on_delete=models.CASCADE,related_name='neighborhood',null=True)
-    neighborhood_id = models.ForeignKey(NeighbourHood,blank=True, on_delete=models.CASCADE,related_name='neighborhood',null=True)
-    activities_email = models.EmailField(max_length=70,blank=True)
-    image_path = models.ImageField(upload_to = 'gallery/')
-    def __str__(self):
-        return self.activities_name
-
-
-    @classmethod
-    def search_by_activities_name(cls,search_term):
-        project = Activities.objects.filter(activities_name__icontains = search_term)
-        return project
-
-
-
 class UserProfile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE,related_name="profile")
     name = models.CharField(max_length=30, blank=True)
@@ -84,3 +61,16 @@ class Post(models.Model):
     image_path = models.ImageField(upload_to = 'gallery/')
     image_description = models.CharField(max_length=100, blank=True)
     hood_id = models.ForeignKey(NeighbourHood,null=True)
+
+
+class Activities(models.Model):
+    name = models.CharField(max_length=30, blank=True)
+    user = models.ForeignKey(User,blank=True, on_delete=models.CASCADE)
+    neigh = models.ForeignKey(NeighbourHood,blank=True, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=70,blank=True)
+    path = models.ImageField(upload_to = 'gallery/')
+
+    @classmethod
+    def search_by_activity_name(cls,search_term):
+        project = Activitiy.objects.filter(activity_name__icontains = search_term)
+        return project

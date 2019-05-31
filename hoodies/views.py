@@ -11,8 +11,11 @@ def homm(request,id):
     biz = Business.objects.all()
 
     post = Post.objects.filter(hood_id=id)
-    
-    return render(request,'home.html', locals())
+
+    activ = Activities.objects.all()
+
+    post = Post.objects.filter(hood_id=id)
+    return render(request, 'home.html', locals())
 
 def register(request):
     if request.method == 'POST':
