@@ -37,8 +37,9 @@ def hood(request):
     return render(request,'hood.html',locals())
 
 def location(request):
+    post = Post.objects.all()
     hood = NeighbourHood.objects.all()
-    return render(request,'location.html',locals())
+    return render(request,'location.html')
 
 @login_required
 def post(request):
@@ -103,7 +104,19 @@ def biz(request):
 
         if form.is_valid():
             form.save()
-        return redirect('location')
+        return redirect('home',1)
     else:
         form  = BizForm()
     return render(request,'business.html',locals())
+
+
+def activ(request):
+    if request.method == 'POST':
+        form = ActivForm(request.POST,request.FILES)
+
+        if form.is_valid():
+            form.save()
+        return redirect('home',1)
+    else:
+        form  = ActivForm()
+    return render(request,'activities.html',locals())

@@ -21,3 +21,9 @@ class BizForm(forms.ModelForm):
     class Meta:
         model = Business
         fields =('business_name','user','neighborhood_id','business_email','image_path')
+
+
+class ActivForm(forms.ModelForm):
+    class Meta:
+        model = Activities
+        fields =('activities_name','user','neighborhood_id','activities_email','image_path')
