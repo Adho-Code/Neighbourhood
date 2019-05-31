@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <div class="three">
 
-    <h4>welcome you all to hoodies <strong>{{user}}</strong></h4>
+    <!-- <h4>welcome to your hood <strong>{{user}}</strong></h4> -->
   </div>
   <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/post">Make Post</a></button>
   <div class="pot">
@@ -14,14 +14,14 @@
       <div class="col-md-1">
 
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <br>
-        <h4>Activites of this week</h4>
-        {% for x in post %}
+        <h4>Activites happening this week</h4>
+        {% for chu in post %}
 
         <img class="card-img-top" src="{{x.image_path.url}}" alt="{{user.username}}">
         <div class="card-body">
-          <p class="card-text">{{x.image_description}}</p>
+          <p class="card-text">{{chu.image_description}}</p>
         </div>
         <div class="card-footer text-muted">
 
@@ -30,11 +30,13 @@
 
         </ul>
         {% endfor %}
-      </div>
+      </div> -->
       <div class="col-md-5">
-        <h3>Activity around you</h3>
-        {% for y in biz %}
-        <li>{{y.activity_name}}</li>
+        <h3>Businesses arround you</h3>
+        {% for you in biz %}
+        <li>{{you.business_name}}</li>
+        <img class="card-img-top"src="{{you.image_path.url}}" alt="{{user.username}}">
+        <p>{{you.image_path.url}}</p>
         {% endfor %}
       </div>
     </div>

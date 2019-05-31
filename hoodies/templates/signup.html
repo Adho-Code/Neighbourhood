@@ -1,4 +1,6 @@
-  {% load static %}
+
+{% load crispy_forms_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -18,17 +20,18 @@
       </div>
       <div class="col-md-4">
         <div class="one">
-            <h1>NEIGHBOURHOOD</h1>
-            <p>Get to Your Home Partner Every where you go</p>
+            <h1>HOODMATE</h1>
+            <p>Your Home Partner Every where you go</p>
         </div>
       </div>
 
       <div class="col-md-7">
         <div class="list">
-          <h5>NEIGHBOURHOOD REGISTRATION</h5>
-          <p>signup to get to know your neighbour</p>
+          <h5>HOODMATE REGISTRATION</h5>
+          <p>signup and intract with your neighbour</p>
           <form class="" method="post">
             {% csrf_token %}
+            {{ form|crispy }}
             <button type="submit" name="button">Sign Up</button>
             <h6>Already have an account? <a href="/accounts/login">LOGIN</a> </h6>
           </form>
@@ -36,6 +39,9 @@
       </div>
     </div>
   </div>
+
+
+  
 </body>
 
 </html>

@@ -10,32 +10,32 @@ from django.shortcuts import get_object_or_404
 
 class Location(models.Model):
     city = models.CharField(max_length=30, blank=True)
-    hoodies = models.CharField(max_length=30, blank=True)
+    hood = models.CharField(max_length=30, blank=True)
 
     def __str__(self):
         return self.hoodies
 
 class NeighbourHood (models.Model):
     user_id = models.ForeignKey(User,blank=True, on_delete=models.CASCADE,related_name='user',null=True)
-    hoodies_name = models.CharField(max_length=30, blank=True)
+    hood_name = models.CharField(max_length=30, blank=True)
     location_id = models.ForeignKey(Location,blank=True, on_delete=models.CASCADE,related_name='location',null=True)
 
     def __str__(self):
-        return self.hoodies_name
+        return self.hood_name
 
 
-class Activity(models.Model):
-    activity_name = models.CharField(max_length=30, blank=True)
+class Business(models.Model):
+    business_name = models.CharField(max_length=30, blank=True)
     user = models.ForeignKey(User,blank=True, on_delete=models.CASCADE,related_name='neighborhood',null=True)
     neighborhood_id = models.ForeignKey(NeighbourHood,blank=True, on_delete=models.CASCADE,related_name='neighborhood',null=True)
-    activity_email = models.EmailField(max_length=70,blank=True)
-
+    business_email = models.EmailField(max_length=70,blank=True)
+    image_path = models.ImageField(upload_to = 'gallery/')
     def __str__(self):
-        return self.activity_name
+        return self.business_name
 
     @classmethod
-    def search_by_activity_name(cls,search_term):
-        project = Activity.objects.filter(activity_name__icontains = search_term)
+    def search_by_business_name(cls,search_term):
+        project = Business.objects.filter(business_name__icontains = search_term)
         return project
 
 
@@ -65,4 +65,4 @@ class Post(models.Model):
 
     image_path = models.ImageField(upload_to = 'gallery/')
     image_description = models.CharField(max_length=100, blank=True)
-    hoodies_id = models.ForeignKey(NeighbourHood,null=True)
+    hood_id = models.ForeignKey(NeighbourHood,null=True)

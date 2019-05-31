@@ -1,22 +1,23 @@
+  
 from django import forms
 from .models import *
 
 class NeighbourHoodForm(forms.ModelForm):
     class Meta:
         model = NeighbourHood
-        fields = ('user_id','hoodies_name','location_id')
+        fields = ('user_id','location_id')
 
 class MakePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('image_path','image_description','hoodies_id')
+        fields = ('image_path','image_description')
 
 class UploadForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields =('user','email_address','neighborhood_id')
 
-class ActiForm(forms.ModelForm):
+class BizForm(forms.ModelForm):
     class Meta:
-        model = Activity
-        fields =('activity_name','user','neighborhood_id','activity_email')
+        model = Business
+        fields =('business_name','user','neighborhood_id','business_email','image_path')

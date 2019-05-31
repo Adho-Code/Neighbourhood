@@ -8,10 +8,10 @@ from .models import *
 # Create your views here.
 def homm(request,id):
 
-    activ = Activ.objects.filter(neighborhood_id=id)
+    biz = Business.objects.all()
 
-    post = Post.objects.filter(hoodies_id=id)
-
+    post = Post.objects.filter(hood_id=id)
+    
     return render(request,'home.html', locals())
 
 def register(request):
@@ -46,8 +46,9 @@ def post(request):
         form = MakePostForm(request.POST,request.FILES)
 
         if form.is_valid():
-            form.save()
-        return redirect('home',request.user.profile.neighborhood_id.id)
+            post=form.save(commit=False)
+            post.save()
+        return redirect('home',1)
     else:
         form  = MakePostForm()
     return render(request,'post.html',locals())
@@ -55,9 +56,9 @@ def post(request):
 @login_required
 def search_business(request):
 
-    if 'activity' in request.GET and request.GET["business"]:
+    if 'business' in request.GET and request.GET["business"]:
         search_term = request.GET.get("business")
-        searched_activity = Activity.search_by_activity_name(search_term)
+        searched_business = Business.search_by_business_name(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',locals())
@@ -96,13 +97,13 @@ def update_index(request):
 
     return render(request,'new.html', locals())
 
-def activ(request):
+def biz(request):
     if request.method == 'POST':
-        form = ActivForm(request.POST,request.FILES)
+        form = BizForm(request.POST,request.FILES)
 
         if form.is_valid():
             form.save()
         return redirect('location')
     else:
-        form  = ActivForm()
-    return render(request,'activity.html',locals())
+        form  = BizForm()
+    return render(request,'business.html',locals())
