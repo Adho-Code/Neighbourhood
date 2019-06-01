@@ -23,7 +23,7 @@
         <h4>Activites happening this week</h4>
         {% for chu in activ %}
 
-        <img class="card-img-top" src="{{chu.path.url}}" alt="{{user.username}}">
+        <img class="d-block -200 img-fluid" src="{{chu.path.url}}" alt="{{user.username}}" height="750px">
         <div class="card-body">
           <p class="card-text">{{chu.name}}</p>
         </div>
@@ -35,16 +35,32 @@
         </ul>
         {% endfor %}
       </div>
+
+
       <div class="col-md-5">
+        <br>
         <h3>Businesses arround you</h3>
         {% for you in biz %}
-        <li>{{you.business_name}}</li>
-        <img class="card-img-top"src="{{you.image_path.url}}" alt="{{user.username}}">
-        <p>{{you.path.url}}</p>
-        {% endfor %}
+
+        <img class="d-block -20 img fluid" src="{{you.image_path.url}}" alt="{{user.username}}" height="50px">
+        <div class="card-body">
+          <p class="card_text">{{you.path.url}}</p>
+        </div>
+        <div class="card-footer text-muted">
+
+          </div>
+          <ul class="list-group list-group-flush">
+
+          </ul>
+          {% endfor %}
+      </div>
+        <!-- <li>{{you.business_name}}</li> -->
+        
+        <!-- <p>{{you.path.url}}</p> -->
+
+        
       </div>
     </div>
   </div>
 
-</div>
 {% endblock %}
