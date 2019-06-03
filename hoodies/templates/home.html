@@ -23,7 +23,7 @@
         <h4>Activites happening this week</h4>
         {% for chu in activ %}
 
-        <img class="d-block -100 img-fluid" src="{{chu.path.url}}" alt="{{user.username}}" height="650px">
+        <img class="d-block -100 img-fluid" src="{{chu.path.url}}" alt="{{user.username}}" style="height: 200px;">
         <div class="card-body">
           <p class="card-text">{{chu.name}}</p>
         </div>
@@ -42,7 +42,7 @@
         <h3>Businesses arround you</h3>
         {% for you in biz %}
 
-        <img class="d-block -20 img fluid" src="{{you.image_path.url}}" alt="{{user.username}}" height="50px">
+        <img class="d-block -20 img fluid" src="{{you.image_path.url}}" alt="{{user.username}}" style="height: 200px;">
         <div class="card-body">
           <p class="card_text">{{you.path.url}}</p>
         </div>
