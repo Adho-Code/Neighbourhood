@@ -7,7 +7,7 @@ Adho Galgallo
 ## Live link
 Use this link to see the web-page
 
-
+`https://neighbourhoodchuu.herokuapp.com/`
 
 ## Project Description
 A web application that keeps you in the know about people in your neighborhood and the activities they are doing within your neighborhood
