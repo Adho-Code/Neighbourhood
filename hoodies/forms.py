@@ -12,10 +12,10 @@ class MakePostForm(forms.ModelForm):
         model = Post
         fields = ('image_path','image_description')
 
-class UploadForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields =('user','email_address','neighborhood_id')
+        model = Profile
+        exclude = ['user_id'] 
 
 class BizForm(forms.ModelForm):
     class Meta:

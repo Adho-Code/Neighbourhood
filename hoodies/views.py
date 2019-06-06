@@ -28,6 +28,20 @@ def register(request):
 
     return render(request,'signup.html',locals())
 
+def search_business(request):
+    
+    if 'business' in request.GET and request.GET["business"]:
+        search_term = request.GET.get("business")
+        searched_business = Business.search_by_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',locals())
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',locals())
+
+
 def hood(request):
     if request.method == 'POST':
         form = NeighbourHoodForm(request.POST,request.FILES)
@@ -57,22 +71,29 @@ def post(request):
         form  = MakePostForm()
     return render(request,'post.html',locals())
 
-@login_required
-def search_business(request):
+# @login_required
+# def search_business(request):
 
-    if 'business' in request.GET and request.GET["business"]:
-        search_term = request.GET.get("business")
-        searched_business = Business.search_by_business_name(search_term)
-        message = f"{search_term}"
+#     if 'business' in request.GET and request.GET["business"]:
+#         search_term = request.GET.get("business")
+#         searched_business = Business.search_by_business_name(search_term)
+#         message = f"{search_term}"
 
-        return render(request, 'search.html',locals())
+#         return render(request, 'search.html',locals())
 
-    else:
-        message = "You haven't searched for any term"
-        return render(request, 'search.html',locals())
+#     else:
+#         message = "You haven't searched for any term"
+#         return render(request, 'search.html',locals())
+
+def profile(request):
+    profile=Profile.objects.filter(user_id=request.user)
+    
+    return render(request, 'profile.html',{'profile':profile})
 
 
-def profile_index(request):
+def update(request):
+    all_profile = Profile.objects.all()
+    profile = Profile.objects.get(user_id = request.user)
     if request.method == 'POST':
         form = UploadForm(request.POST,request.FILES)
 
@@ -80,11 +101,25 @@ def profile_index(request):
             form.save()
             return redirect('profile')
     else:
-        form =UploadForm()
+        form  = ProfileForm()
+
+    return render(request,'new_profile.html', locals())
 
 
-        all_profile = UserProfile.objects.all()
-    return render(request,'profile.html', locals())
+def editprofile(request):
+    
+    if request.method == 'POST':
+        form = ProfileForm(request.POST,request.FILES)
+    
+        if form.is_valid():
+            profile=form.save(commit=False)
+            profile.user_id=request.user
+            profile.save()
+            return redirect('profile',request.user.id)
+    else:
+        form =ProfileForm()
+        
+    return render(request,'editprofile.html',locals())
 
 
 def update_index(request):

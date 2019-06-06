@@ -1,30 +1,26 @@
+
+
 {% extends 'base.html' %}
 {% block content %}
 {{ block.super}}
 {% load bootstrap4%}
 
-<br>
-<br>
-<br>
 <div class="container">
-  <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/new">Edit Profile</a></button>
-  <i id="fa_h" style="font-size:24px" class="fa fa-cog" aria-hidden="true"></i>
-  <div id="block">
-    <div class="block">
-      {% for prof in all_profile%}
-      <h4 id="p_hhh">Username: <strong>{{prof.user}}</strong></h4>
-      <h4 id="p_hhh">email_address: <strong>{{prof.email_address}}</strong></h4>
-      <h4 id="p_hhh">neighborhood: <strong>{{prof.neighborhood_id}}</strong></h4>
-      {% endfor %}
-    </div>
-    <br>
-  </div>
+  <button id="button_h" type="button" class="btn btn-outline-secondary"><a href="/edit/">Edit Profile</a></button>
+
+  <div class="row" style='margin-left: 500px'>
+    <h1>Profile Info</h1>
+  {% for all in profile%}
+  {%if all.profile_photo%}
+  <img src="{{all.profile_photo.url}}" alt="avatar" class="rounded-circle" style='height:300px; width:300px; margin-right: 700px;'>
+  <h4 id="p_hhh">{{user}}</h4> <br>
+  <h4>{{all.contacts}}</h4>
+  <p>{{all.profile_photo.url}}</p>
+  <h4>{{all.bio}}</h4>
+  {%endif%}
+  {% endfor %}
+  
 </div>
-<br>
-<br>
-<div class="">
-  {%for de in images%}
-  <img src="{{de.image_path.url}}" alt="">
-  {%endfor%}
 </div>
 {%endblock%}
+

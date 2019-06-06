@@ -16,8 +16,13 @@
   <div class="row">
 
     {% if searched_business %}
-    {% for t in searched_business %}
-      {{t.business_name}}
+    {% for images in searched_business %}
+    <div class="col-md-4">
+      <a data-fancybox href="{{images.images_path.url}}" ></a>
+        <img src=" {{images.image_path.url}}" alt="image" style="max-height: 400px; max-width:300px;">
+      
+      </a>
+    </div>
     {% endfor %}
     {% endif %}
   </div>

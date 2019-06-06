@@ -30,31 +30,34 @@ class Business(models.Model):
     neighborhood_id = models.ForeignKey(NeighbourHood,blank=True, on_delete=models.CASCADE,related_name='neighborhood',null=True)
     business_email = models.EmailField(max_length=70,blank=True)
     image_path = models.ImageField(upload_to = 'gallery/')
+
     def __str__(self):
         return self.business_name
+    @classmethod
+    def search_by_name(cls,search_term):
+        business = cls.objects.filter(business_name__icontains = search_term)
+        return business
 
+class Profile(models.Model):
+    profile_photo = models.ImageField(upload_to = 'profile/')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    contacts=models.CharField(max_length=50, blank=True)
+    bio = models.CharField(max_length=100, blank=True)
 
-class UserProfile(models.Model):
-    user=models.OneToOneField(User, on_delete=models.CASCADE,related_name="profile")
-    name = models.CharField(max_length=30, blank=True)
-    email_address = models.EmailField(max_length=70,blank=True)
-    neighborhood_id = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE,related_name="profile_hood",null=True)
+    class Meta:
+        ordering=['profile_photo']
+
     def __str__(self):
-        return self.name
-        class Meta:
-            ordering= ['user']
+        return self.contacts
 
     def save_user(self):
         self.save()
 
-    @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
+    @receiver(post_save,sender=User)
+    def create_user_profile(sender,instance,created,**kwargs):
         if created:
-            UserProfile.objects.create(user=instance)
+            Profile.objects.create(user_id=instance)
 
-    @receiver(post_save, sender=User)
-    def save_user_profile(sender,instance, **kwargs):
-        instance.profile.save()
 
 class Post(models.Model):
 
